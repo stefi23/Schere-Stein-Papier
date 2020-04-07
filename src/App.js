@@ -11,7 +11,7 @@ class App extends React.Component {
       winner: "unknown",
       computerScore: 0,
       playerScore: 0,
-      tie: 0
+      tie: 0,
     };
   }
 
@@ -23,7 +23,7 @@ class App extends React.Component {
     this.setState({
       player,
       computer,
-      winner
+      winner,
     });
     this.getScore(winner);
   };
@@ -66,22 +66,22 @@ class App extends React.Component {
 
   playGame = () => {
     this.setState({
-      winner: "unknown"
+      winner: "unknown",
     });
   };
 
   getScore = (winner) => {
     if (winner === "player") {
       this.setState({
-        playerScore: this.state.playerScore + 1
+        playerScore: this.state.playerScore + 1,
       });
     } else if (winner === "computer") {
       this.setState({
-        computerScore: this.state.computerScore + 1
+        computerScore: this.state.computerScore + 1,
       });
     } else {
       this.setState({
-        tie: this.state.tie + 1
+        tie: this.state.tie + 1,
       });
     }
   };
@@ -100,26 +100,27 @@ class App extends React.Component {
                   <button
                     onClick={this.handleChoice}
                     name="user"
-                    value={"paper"}
-                    className="m-2"
+                    value={"rock"}
+                    className="m-2 buttonGrayRounded"
                   >
-                    Paper
+                    ✊
                   </button>
                   <button
                     onClick={this.handleChoice}
                     name="user"
-                    value={"rock"}
-                    className="m-2"
+                    value={"paper"}
+                    className="m-2 buttonGrayRounded"
                   >
-                    Rock
+                    ✋
                   </button>
+
                   <button
                     onClick={this.handleChoice}
                     name="user"
                     value={"scissors"}
-                    className="m-2"
+                    className="m-2 buttonGrayRounded"
                   >
-                    Scissors
+                    ✌️
                   </button>
                 </div>
               </div>

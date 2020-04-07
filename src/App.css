@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.rotate {
+  transform: rotate(-90deg);
+
+  /* Legacy vendor prefixes that you probably don't need... */
+
+  /* Safari */
+  -webkit-transform: rotate(-90deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+
+  /* IE */
+  -ms-transform: rotate(-90deg);
+
+  /* Opera */
+  -o-transform: rotate(-90deg);
+
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.buttonGrayRounded {
+  background-color: #49515f;
+  border-radius: 20%;
+}
+
+.buttonGrayRounded:hover {
+  background-color: #8a6a76;
+}
