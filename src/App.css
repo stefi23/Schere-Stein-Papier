@@ -59,10 +59,56 @@
 }
 
 .buttonGrayRounded {
-  background-color: #49515f;
-  border-radius: 20%;
+  background-color: #49515f !important;
+  border-radius: 20% !important;
 }
 
 .buttonGrayRounded:hover {
+  background-color: #8a6a76 !important;
+}
+
+.box {
+  background-color: #31353f;
+  border: 0;
+  box-shadow: 0 2px 6px 0px hsla(0, 0%, 0%, 0.2);
+  border-radius: 2%;
+}
+
+p {
+  font-size: 16px;
+}
+
+.buttonPink {
+  font-size: 18px;
+  background-color: #49515f;
+  color: white;
+  padding: 5px 10px;
+}
+
+.table-dark,
+.table-dark > th,
+.table-dark > td {
+  background-color: #31353f;
+  font-size: 16px;
+}
+
+.buttonBoxPink {
   background-color: #8a6a76;
+  font-size: 22px !important;
+  padding: 10px;
+  border-radius: 20%;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.buttonBox {
+  /* -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button; */
+  background-color: #49515f;
+  font-size: 22px !important;
+  padding: 10px;
+  border-radius: 20%;
+  border: 1px solid white;
+  text-align: center;
 }
