@@ -78,6 +78,7 @@ class App extends React.Component {
     });
     this.playGame();
   };
+  //
 
   getScore = (winner) => {
     if (winner === "player") {
