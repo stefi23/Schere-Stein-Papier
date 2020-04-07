@@ -45,21 +45,21 @@ class App extends React.Component {
       return "tie";
     } else if (player === "✊") {
       if (computer === "✌️") {
-        return "player";
+        return "Player";
       } else {
-        return "computer";
+        return "Computer";
       }
     } else if (player === "✌️") {
       if (computer === "✋") {
-        return "player";
+        return "Player";
       } else {
-        return "computer";
+        return "Computer";
       }
     } else if (player === "✋") {
       if (computer === "✊") {
-        return "player";
+        return "Player";
       } else {
-        return "computer";
+        return "Computer";
       }
     }
   };
@@ -139,11 +139,13 @@ class App extends React.Component {
             ) : (
               <div className="row p-3 m-3">
                 <div className="col-4 text-center">
+                  <p>Player:</p>
                   <p className="m-2">
                     <span className="buttonBoxPink"> {this.state.player}</span>
                   </p>
                 </div>
                 <div className="col-4 text-center d-flex align-items-center justify-content-center ">
+                  <p></p>
                   <p className="mb-0">
                     {" "}
                     {this.state.winner === "tie"
@@ -152,6 +154,7 @@ class App extends React.Component {
                   </p>
                 </div>
                 <div className="col-4 text-center">
+                  <p>Computer:</p>
                   <p className="m-2 ">
                     <span className="buttonBox"> {this.state.computer}</span>
                   </p>
