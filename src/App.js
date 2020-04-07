@@ -168,7 +168,7 @@ class App extends React.Component {
                 className="buttonPink m-2 border rounded"
                 onClick={this.playGame}
               >
-                Play again!
+                Play again
               </button>
               <button
                 className="buttonPink m-2 border rounded"
