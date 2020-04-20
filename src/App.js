@@ -167,6 +167,7 @@ class App extends React.Component {
               <button
                 className="buttonPink m-2 border rounded"
                 onClick={this.playGame}
+                disabled={this.state.winner === "unknown"}
               >
                 Play again
               </button>

@@ -85,6 +85,13 @@ p {
   padding: 5px 10px;
 }
 
+.buttonPink:disabled {
+  font-size: 18px;
+  background-color: #49515f;
+  color: #a4a8af;
+  padding: 5px 10px;
+}
+
 .table-dark,
 .table-dark > th,
 .table-dark > td {
