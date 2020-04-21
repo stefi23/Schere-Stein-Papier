@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bb7f234967a0b179f7b8a5789b1fea9b",
+    "revision": "4c872867fcdaedd5fb9b24b4282a5ff6",
     "url": "/Schere-Stein-Papier/index.html"
   },
   {
