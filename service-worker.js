@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Schere-Stein-Papier/precache-manifest.97e7f12fa9caeac72d1d354103be2b5e.js"
+  "/Schere-Stein-Papier/precache-manifest.fa5f5a1db2bcc09ae2bd4ae6cfceefb6.js"
 );
 
 self.addEventListener('message', (event) => {
