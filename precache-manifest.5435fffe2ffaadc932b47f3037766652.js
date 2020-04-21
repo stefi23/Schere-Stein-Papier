@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "da933b4b20ea2ab00c008f80d3f70847",
+    "revision": "f5146e246fa73b6eb703ef3dac766e2a",
     "url": "/Schere-Stein-Papier/index.html"
   },
   {
-    "revision": "09258c37396f6d605084",
+    "revision": "159b0974f2e74a3accee",
     "url": "/Schere-Stein-Papier/static/css/main.25509799.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Schere-Stein-Papier/static/js/2.8fc607f3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "09258c37396f6d605084",
-    "url": "/Schere-Stein-Papier/static/js/main.2d7bc80f.chunk.js"
+    "revision": "159b0974f2e74a3accee",
+    "url": "/Schere-Stein-Papier/static/js/main.19f81393.chunk.js"
   },
   {
     "revision": "e1b585953c0fb54a1b7d",
