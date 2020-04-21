@@ -42,6 +42,7 @@ class App extends React.Component {
       winner,
       computer,
     });
+    console.log(this.state.player);
   };
 
   getComputerMove = () => {
@@ -134,20 +135,21 @@ class App extends React.Component {
                     name="user"
                     value={"✊"}
                     className="m-2 buttonGrayRounded"
+                    aria-label="stone"
+                    role="img"
                   >
-                    <span role="img" aria-label="rock">
-                      ✊
-                    </span>
+                    ✊
                   </button>
+
                   <button
                     onClick={this.handleChoice}
                     name="user"
                     value={"✋"}
                     className="m-2 buttonGrayRounded"
+                    aria-label="scissors"
+                    role="img"
                   >
-                    <span role="img" aria-label="paper">
-                      ✋
-                    </span>
+                    ✋
                   </button>
 
                   <button
@@ -155,10 +157,10 @@ class App extends React.Component {
                     name="user"
                     value={"✌️"}
                     className="m-2 buttonGrayRounded"
+                    aria-label="scissors"
+                    role="img"
                   >
-                    <span role="img" aria-label="scissors">
-                      ✌️
-                    </span>
+                    ✌️
                   </button>
                 </div>
               </div>
@@ -168,8 +170,8 @@ class App extends React.Component {
                   <p>Player:</p>
                   <p className="m-2">
                     <span
-                      role="img"
-                      aria-label="player choice"
+                      // role="img"
+                      // aria-label="player choice"
                       className="buttonBox"
                       style={{
                         background:
@@ -182,7 +184,6 @@ class App extends React.Component {
                             : "#49515f",
                       }}
                     >
-                      {" "}
                       {this.state.player}
                     </span>
                   </p>
@@ -271,20 +272,24 @@ class App extends React.Component {
                 align="center"
                 className="table table-dark"
               >
-                <tr>
-                  <td> Player </td>
-                  <td width="30"> &nbsp; </td>
-                  <td> Computer </td>
-                  <td width="30"> &nbsp; </td>
-                  <td> Tie </td>
-                </tr>
-                <tr>
-                  <td>{this.state.playerScore}</td>
-                  <td> &nbsp; </td>
-                  <td>{this.state.computerScore}</td>
-                  <td> &nbsp; </td>
-                  <td>{this.state.tie}</td>
-                </tr>
+                <thead>
+                  <tr>
+                    <td> Player </td>
+                    <td width="30"> &nbsp; </td>
+                    <td> Computer </td>
+                    <td width="30"> &nbsp; </td>
+                    <td> Tie </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{this.state.playerScore}</td>
+                    <td> &nbsp; </td>
+                    <td>{this.state.computerScore}</td>
+                    <td> &nbsp; </td>
+                    <td>{this.state.tie}</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
