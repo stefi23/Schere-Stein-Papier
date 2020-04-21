@@ -165,11 +165,11 @@ class App extends React.Component {
                       className="buttonBox"
                       style={{
                         background:
-                          this.state.winner == "Player" &&
+                          this.state.winner === "Player" &&
                           this.state.counterComplete === true
                             ? "#8a6a76"
                             : this.state.counterComplete === true &&
-                              this.state.winner == "tie"
+                              this.state.winner === "tie"
                             ? "#49515f"
                             : "#49515f",
                       }}
@@ -201,11 +201,11 @@ class App extends React.Component {
                         className="buttonBox"
                         style={{
                           background:
-                            this.state.winner == "Computer" &&
+                            this.state.winner === "Computer" &&
                             this.state.counterComplete === true
                               ? "#8a6a76"
                               : this.state.counterComplete === true &&
-                                this.state.winner == "tie"
+                                this.state.winner === "tie"
                               ? "#49515f"
                               : "#49515f",
                         }}
@@ -225,16 +225,23 @@ class App extends React.Component {
           </div>
           <div className="row mt-2">
             <div className="col-12">
+              {this.state.winner !== "unknown" ? (
+                <button
+                  className="buttonGray m-2 border rounded"
+                  onClick={this.playGame}
+                >
+                  Play again
+                </button>
+              ) : null}
+
               <button
-                className="buttonPink m-2 border rounded"
-                onClick={this.playGame}
-                disabled={this.state.winner === "unknown"}
-              >
-                Play again
-              </button>
-              <button
-                className="buttonPink m-2 border rounded"
+                className="buttonGray m-2 border rounded"
                 onClick={this.resetGame}
+                disabled={
+                  this.state.computerScore === 0 &&
+                  this.state.playerScore === 0 &&
+                  this.state.tie === 0
+                }
               >
                 Reset Game
               </button>

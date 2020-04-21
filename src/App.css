@@ -74,17 +74,31 @@
   border-radius: 2%;
 }
 
+@media screen and (max-width: 700px) {
+  .box {
+    border-radius: 2%;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .box {
+    border-radius: 2%;
+    margin: 10px;
+  }
+}
+
 p {
   font-size: 16px;
 }
 
-.buttonPink {
+.buttonGray {
   font-size: 18px;
   background-color: #49515f;
   color: white;
   padding: 5px 10px;
 }
-.buttonPink:disabled {
+.buttonGray:disabled {
   font-size: 18px;
   background-color: #49515f;
   color: #a4a8af;
