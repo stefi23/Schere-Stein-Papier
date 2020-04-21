@@ -135,7 +135,9 @@ class App extends React.Component {
                     value={"✊"}
                     className="m-2 buttonGrayRounded"
                   >
-                    ✊
+                    <span role="img" aria-label="rock">
+                      ✊
+                    </span>
                   </button>
                   <button
                     onClick={this.handleChoice}
@@ -143,7 +145,9 @@ class App extends React.Component {
                     value={"✋"}
                     className="m-2 buttonGrayRounded"
                   >
-                    ✋
+                    <span role="img" aria-label="paper">
+                      ✋
+                    </span>
                   </button>
 
                   <button
@@ -152,7 +156,9 @@ class App extends React.Component {
                     value={"✌️"}
                     className="m-2 buttonGrayRounded"
                   >
-                    ✌️
+                    <span role="img" aria-label="scissors">
+                      ✌️
+                    </span>
                   </button>
                 </div>
               </div>
@@ -162,6 +168,8 @@ class App extends React.Component {
                   <p>Player:</p>
                   <p className="m-2">
                     <span
+                      role="img"
+                      aria-label="player choice"
                       className="buttonBox"
                       style={{
                         background:
@@ -198,6 +206,8 @@ class App extends React.Component {
                   {this.state.counterComplete ? (
                     <p className="m-2 ">
                       <span
+                        role="img"
+                        aria-label="computer choice"
                         className="buttonBox"
                         style={{
                           background:
@@ -216,16 +226,23 @@ class App extends React.Component {
                     </p>
                   ) : (
                     <p className="m-2">
-                      <span className="buttonBox">❔</span>
+                      <span
+                        className="buttonBox"
+                        role="img"
+                        aria-label="question mark"
+                      >
+                        ❔
+                      </span>
                     </p>
                   )}
                 </div>
               </div>
             )}
           </div>
-          <div className="row mt-2">
+          <div className="row mt-4">
             <div className="col-12">
-              {this.state.winner !== "unknown" ? (
+              {this.state.winner !== "unknown" &&
+              this.state.counterComplete === true ? (
                 <button
                   className="buttonGray m-2 border rounded"
                   onClick={this.playGame}
