@@ -42,7 +42,6 @@ class App extends React.Component {
       winner,
       computer,
     });
-    console.log(this.state.player);
   };
 
   getComputerMove = () => {
