@@ -12,32 +12,50 @@ class App extends React.Component {
       computerScore: 0,
       playerScore: 0,
       tie: 0,
+      counter: 3,
+      counterComplete: false,
     };
   }
 
   handleChoice = (event) => {
     event.preventDefault();
     let player = event.target.value;
+    let countDown = setInterval(() => {
+      this.setState({
+        counter: this.state.counter - 1,
+      });
+    }, 1000);
+
+    setTimeout(() => {
+      clearInterval(countDown);
+      this.setState({
+        counter: 3,
+        counterComplete: true,
+      });
+      this.getScore(winner);
+    }, 3000);
+
     let computer = this.getComputerMove();
     let winner = this.getWinner(player, computer);
     this.setState({
       player,
-      computer,
       winner,
+      computer,
     });
-    this.getScore(winner);
   };
 
   getComputerMove = () => {
+    let index = getRandomInt();
+
+    if (index === 0) return "✋";
+    else if (index === 1) return "✌️";
+    else return "✊";
+
     function getRandomInt() {
       let min = 0;
       let max = 3;
       return Math.floor(Math.random() * (max - min)) + min;
     }
-    let index = getRandomInt();
-    if (index === 0) return "✋";
-    else if (index === 1) return "✌️";
-    else return "✊";
   };
 
   getWinner = (player, computer) => {
@@ -67,6 +85,7 @@ class App extends React.Component {
   playGame = () => {
     this.setState({
       winner: "unknown",
+      counterComplete: false,
     });
   };
 
@@ -75,17 +94,18 @@ class App extends React.Component {
       computerScore: 0,
       playerScore: 0,
       tie: 0,
+      counterComplete: false,
     });
     this.playGame();
   };
   //
 
   getScore = (winner) => {
-    if (winner === "player") {
+    if (winner === "Player") {
       this.setState({
         playerScore: this.state.playerScore + 1,
       });
-    } else if (winner === "computer") {
+    } else if (winner === "Computer") {
       this.setState({
         computerScore: this.state.computerScore + 1,
       });
@@ -141,23 +161,32 @@ class App extends React.Component {
                 <div className="col-4 text-center">
                   <p>Player:</p>
                   <p className="m-2">
-                    <span className="buttonBoxPink"> {this.state.player}</span>
+                    <span className="buttonBox"> {this.state.player}</span>
                   </p>
                 </div>
                 <div className="col-4 text-center d-flex align-items-center justify-content-center ">
-                  <p></p>
-                  <p className="mb-0">
-                    {" "}
-                    {this.state.winner === "tie"
-                      ? "You have a tie"
-                      : this.state.winner + " won!"}
-                  </p>
+                  {this.state.counterComplete ? (
+                    <p className="mb-0">
+                      {" "}
+                      {this.state.winner === "tie"
+                        ? "You have a tie"
+                        : this.state.winner + " won!"}
+                    </p>
+                  ) : (
+                    <p className="mb-0">{this.state.counter}</p>
+                  )}
                 </div>
                 <div className="col-4 text-center">
                   <p>Computer:</p>
-                  <p className="m-2 ">
-                    <span className="buttonBox"> {this.state.computer}</span>
-                  </p>
+                  {this.state.counterComplete ? (
+                    <p className="m-2 ">
+                      <span className="buttonBox"> {this.state.computer}</span>
+                    </p>
+                  ) : (
+                    <p className="m-2 ">
+                      <span className="buttonBox">❔</span>
+                    </p>
+                  )}
                 </div>
               </div>
             )}
