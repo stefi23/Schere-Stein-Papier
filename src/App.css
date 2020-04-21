@@ -84,6 +84,12 @@ p {
   color: white;
   padding: 5px 10px;
 }
+.buttonPink:disabled {
+  font-size: 18px;
+  background-color: #49515f;
+  color: #a4a8af;
+  padding: 5px 10px;
+}
 
 .table-dark,
 .table-dark > th,
@@ -92,14 +98,14 @@ p {
   font-size: 16px;
 }
 
-.buttonBoxPink {
+/* .buttonBoxPink {
   background-color: #8a6a76;
   font-size: 22px !important;
   padding: 10px;
   border-radius: 20%;
   border: 1px solid white;
   text-align: center;
-}
+} */
 
 .buttonBox {
   /* -webkit-appearance: button;

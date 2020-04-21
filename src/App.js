@@ -161,7 +161,22 @@ class App extends React.Component {
                 <div className="col-4 text-center">
                   <p>Player:</p>
                   <p className="m-2">
-                    <span className="buttonBox"> {this.state.player}</span>
+                    <span
+                      className="buttonBox"
+                      style={{
+                        background:
+                          this.state.winner == "Player" &&
+                          this.state.counterComplete === true
+                            ? "#8a6a76"
+                            : this.state.counterComplete === true &&
+                              this.state.winner == "tie"
+                            ? "#49515f"
+                            : "#49515f",
+                      }}
+                    >
+                      {" "}
+                      {this.state.player}
+                    </span>
                   </p>
                 </div>
                 <div className="col-4 text-center d-flex align-items-center justify-content-center ">
@@ -173,17 +188,34 @@ class App extends React.Component {
                         : this.state.winner + " won!"}
                     </p>
                   ) : (
-                    <p className="mb-0">{this.state.counter}</p>
+                    <p className="mb-0" style={{ fontSize: "28px" }}>
+                      {this.state.counter}
+                    </p>
                   )}
                 </div>
                 <div className="col-4 text-center">
                   <p>Computer:</p>
                   {this.state.counterComplete ? (
                     <p className="m-2 ">
-                      <span className="buttonBox"> {this.state.computer}</span>
+                      <span
+                        className="buttonBox"
+                        style={{
+                          background:
+                            this.state.winner == "Computer" &&
+                            this.state.counterComplete === true
+                              ? "#8a6a76"
+                              : this.state.counterComplete === true &&
+                                this.state.winner == "tie"
+                              ? "#49515f"
+                              : "#49515f",
+                        }}
+                      >
+                        {" "}
+                        {this.state.computer}
+                      </span>
                     </p>
                   ) : (
-                    <p className="m-2 ">
+                    <p className="m-2">
                       <span className="buttonBox">❔</span>
                     </p>
                   )}
@@ -196,6 +228,7 @@ class App extends React.Component {
               <button
                 className="buttonPink m-2 border rounded"
                 onClick={this.playGame}
+                disabled={this.state.winner === "unknown"}
               >
                 Play again
               </button>
