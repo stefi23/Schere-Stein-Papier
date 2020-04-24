@@ -29,7 +29,7 @@ This app was build with:
 - [React](https://reactjs.org/docs/create-a-new-react-app.html)
 - [Boostrap 4](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 
-## Install
+## Install and Play
 
 ```
 git clone https://github.com/stefi23/Schere-Stein-Papier.git
